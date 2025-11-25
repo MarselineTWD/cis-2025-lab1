@@ -43,7 +43,7 @@ jobs:
           ALLURE_RESULTS_DIR: allure-results
           
       - name: Restore .NET dependencies
-        working-directory:./backend
+        working-directory: ./backend
         run: dotnet restore
 
 
