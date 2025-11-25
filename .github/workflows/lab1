@@ -49,16 +49,16 @@ jobs:
               ALLURE_RESULTS_DIR: allure-results
 
         - name: Restore .NET dependencies
-          working-directory: ./backend
-          run: dotnet restore
+            working-directory: ./backend
+            run: dotnet restore
 
         - name: Run backend tests with Allure
-          working-directory: ./backend
-          run: |
-          mkdir -p allure-results
-          export ALLURE_RESULTS_DIR=${{ github.workspace }}/backend/allure-results
-          dotnet test Tests/Tests.csproj
-          continue-on-error: true
+            working-directory: ./backend
+            run: |
+              mkdir -p allure-results
+              export ALLURE_RESULTS_DIR=${{ github.workspace }}/backend/allure-results
+              dotnet test Tests/Tests.csproj
+            continue-on-error: true
 
         - name: Download Allure CLI
              run: |
